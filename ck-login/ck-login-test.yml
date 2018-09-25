@@ -1,0 +1,28 @@
+spring:
+  datasource:
+      url: jdbc:postgresql://192.168.0.238:5432/test_chat?characterEncoding=utf8&useSSL=false
+      username: test_chat
+      password: test_chat
+      driver-class-name: org.postgresql.Driver
+      druid:
+        initial-size: 1
+        min-idle: 1
+        max-active: 20
+        test-on-borrow: true
+        stat-view-servlet:
+          loginUsername: admin
+          loginPassword: admin
+          allow: 127.0.0.1
+          reset-enable: false
+  rabbitmq:
+      host: ${RABBIT_MQ_HOST:192.168.0.117}
+      port:  ${RABBIT_MQ_PORT:5672}
+      username: admin
+      password: admin
+  redis:
+      database: 0
+      host: ${REDIS_HOST:192.168.0.117}
+      port: ${REDIS_PORT:6379}
+      password:
+      pool:
+          max-active: 20
